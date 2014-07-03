@@ -1,0 +1,5 @@
+2014-03-07
+---    
+1. Create base archtecture with angularjs, contain home, article, logging three part.
+2. Involve marked.js, used for logging feature.
+3. Add basic style for whole project and logging page.
