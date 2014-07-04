@@ -6,7 +6,7 @@ angular.module('myApp.controllers', [])
   .controller('articleCtrl', [function() {
 
   }])
-  .controller('loggingCtrl', [function() {
+  .controller('loggingCtrl', ['$scope', 'Logging', function($scope, Logging) {
 
   	var markdownContent = '';
 	var htmlContent = '';
@@ -28,6 +28,43 @@ angular.module('myApp.controllers', [])
 		markdownContent = document.getElementById('editor').value;
 		convert(markdownContent);
 	});
+
+
+	$('#logging textarea').keydown(function(event) {
+
+		// save function
+		if (event.keyCode === 83 && event.ctrlKey) {
+			event.preventDefault();
+			event.stopPropagation();
+
+			var loggingDataTitle = '';
+			var mdContent = document.getElementById('editor').value;
+			var hContent = document.getElementById('show_panel').innerHTML;
+
+
+			var regExp = /^\[.*\]/;
+			loggingDataTitle = (regExp.exec(mdContent))[0].replace(/[\[]/, '');
+			loggingDataTitle = loggingDataTitle.replace(/[\]]/, '');
+
+			// var param = {};
+			// var loggingData = document.getElementById('show_panel').innerHTML;
+			var loggingData = {
+				'title': loggingDataTitle,
+				'markdownContent': mdContent,
+				'htmlContent': hContent
+			}
+
+			Logging.query(loggingData, function(data) {
+				if (data.success) {
+					alert('success');
+				} else {
+					alert('error');
+				}
+			});
+
+		}
+	});
+
   }])
   .controller('homeCtrl', [function() {
 

@@ -1,7 +1,7 @@
 var dynamicHandle = require("./../handle/dynamic/handle");
 
 var handle = {};
-handle['/parse'] = dynamicHandle.parse;
+handle['/logging'] = dynamicHandle.logging;
 handle['/undefined'] = dynamicHandle.undefined;
 
 function route(handle, pathname, response, postData) {

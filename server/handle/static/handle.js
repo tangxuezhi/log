@@ -16,7 +16,7 @@ function handle(request, response, pathname) {
     realPath = realPath.replace(/\//, '');
     realPath = 'app/' + realPath;
 
-    console.log(realPath);
+    // console.log(realPath);
     
     var pathHandle = function(realPath) {
         fs.stat(realPath, function(err, stats) {

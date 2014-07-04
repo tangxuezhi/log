@@ -1,0 +1,19 @@
+<p>[20140705-男女分班]</p>
+<h1 id="json-">JSON与字符串的转换</h1>
+<hr>
+<hr>
+<p>JSON的两个方法：</p>
+<ol>
+<li>stringify： 把JSON object转化成字符串。例如：<pre><code>var jsonObj = {
+"name": "Noah"
+}
+JSON.stringify(jsonObj);
+// jsonObj: "{"name": "Noah"}"
+</code></pre></li>
+<li>parse: 把字符串类型的JSON object转化成JSON object。需要注意的是，被转化的字符串类型中需用双引号，不能用单引号或是单双混用。<pre><code>var jsonObj = "{
+"name": "Noah"
+}"
+JSON.parse(jsonObj);
+// jsonObj: {"name": "Noah"}
+</code></pre></li>
+</ol>

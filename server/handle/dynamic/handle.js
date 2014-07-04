@@ -8,20 +8,29 @@ function undefined(response, data) {
 	response.end();
 };
 
-function parse(response, data) {
-	// console.log(typeof data.content);
-	// console.log(data.content);
-	// response.writeHead(200, {
-	// 	"Content-Type": "text/plain"
-	// });
-	fs.writeFile('./data/content.md', data.content, function(err, content) {
-		if (err) throw err;
-		console.log(content);
-	});
+function logging(response, data) {
+	var returnData = {
+		"success": false,
+	};
 
-	response.write("parse process");
-	response.end();
+	fs.writeFile('./data/' + data.title + '.markdown', data.markdownContent, function(err, content) {
+		if (err) {
+			throw err;
+		} else {
+			fs.writeFile('./data/' + data.title + '.html', data.htmlContent, function(err, content) {
+				if (err) {
+					throw err;
+				} else {
+					returnData.success = true;
+
+					returnData = JSON.stringify(returnData);
+					response.write(returnData);
+					response.end();
+				}
+			});
+		}
+	});
 };
 
-exports.parse = parse;
+exports.logging = logging;
 exports.undefined = undefined;
