@@ -1,4 +1,4 @@
-body{
+#logging body{
     /*margin: 0 auto;*/
     background-color:white;
 
@@ -31,7 +31,7 @@ body{
 }
 
 
-p   {
+#logging p   {
 /    font-size: 22px;
     line-height: 150%;
 /    max-width: 540px;
@@ -41,114 +41,114 @@ p   {
 }
 
 
-h1, h2, h3, h4 {
+#logging h1, #logging h2, #logging h3, #logging h4 {
 /    color: #111111;
     font-weight: 400;
 }
 
-h2, h3, h4, h5, p {
+#logging h2, #logging h3, #logging h4, #logging h5, #logging p {
     margin-bottom: 25px;
     padding: 0;
 }
 
-h1 {
+#logging h1 {
     margin-bottom: 10px;
     font-size:300%;
     padding: 0px;
     font-variant:small-caps;
 }
 
-h2 {
+#logging h2 {
     font-size:150%
 /    margin: 24px 0 6px; 
 }
 
-h3 {
+#logging h3 {
     font-size:120%
 }
-h4 {
+#logging h4 {
     font-size:100%
     font-variant:small-caps;
 
 }
-h5 {
+#logging h5 {
     font-size:80%
     font-weight: 100;
 }
 
-h6 {
+#logging h6 {
     font-size:80%
     font-weight: 100;
     color:red;
     font-variant:small-caps;
 }
-a {
+#logging a {
     color: grey;
     margin: 0;
     padding: 0;
     vertical-align: baseline;
 }
-a:hover {
+#logging a:hover {
     text-decoration: blink;
     color: green;
 }
-a:visited {
+#logging a:visited {
     color: black;
 }
-ul, ol {
+#logging ul, ol {
     padding: 0;
     margin: 0px 0px 0px 50px;
 }
-ul {
+#logging ul {
     list-style-type: square;
     /*list-style-position: inside;*/
 
 }
 
-li {
+#logging li {
      line-height:150%    
 }
-li ul, li ul {
+#logging li ul, #logging li ul {
     margin-left: 24px;
 }
 
-pre {
+#logging pre {
     padding: 0px 24px;
     max-width: 800px;
     white-space: pre-wrap;
     background-color: #eeeeee;
 }
-code {
+#logging code {
     font-family: Consolas, Monaco, Andale Mono, monospace;
     line-height: 1.5;
     font-size: 13px;
 }
-aside {
+#logging aside {
     display: block;
     float: right;
     width: 390px;
 }
-blockquote {
+#logging blockquote {
     border-left:.5em solid #ddd;
     padding: 0 1em;
     margin-left:0;
     max-width: 476px;
     background-color: #eee;
 }
-blockquote  cite {
+#logging blockquote  cite {
  /   font-size:14px;
     line-height:20px;
     color:#bfbfbf;
 }
-blockquote cite:before {
+#logging blockquote cite:before {
     content: '\2014 \00A0';
 }
 
-blockquote p {  
+#logging blockquote p {  
     color: #666;
     max-width: 460px;
 }
-hr {
+#logging hr {
 /    width: 540px;
     text-align: left;
     margin: 0 auto 0 0;

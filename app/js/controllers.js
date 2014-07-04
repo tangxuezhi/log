@@ -7,6 +7,7 @@ angular.module('myApp.controllers', [])
 
   }])
   .controller('loggingCtrl', [function() {
+
   	var markdownContent = '';
 	var htmlContent = '';
 	var convert = function(content) {
