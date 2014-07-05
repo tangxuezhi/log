@@ -3,6 +3,11 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
+  .controller('mainCtrl', ['$rootScope', '$scope', '$http', 'Home', '$location', 'DataTransfer', function($rootScope, $scope, $http, Home, $location, DataTransfer) {
+  	$scope.homeButtonClick = function() {
+  		console.log('homeButtonClick fire!');
+  	}
+  }])
   .controller('articleCtrl', [function() {
 
   }])
@@ -46,14 +51,13 @@ angular.module('myApp.controllers', [])
 			loggingDataTitle = (regExp.exec(mdContent))[0].replace(/[\[]/, '');
 			loggingDataTitle = loggingDataTitle.replace(/[\]]/, '');
 
-			// var param = {};
-			// var loggingData = document.getElementById('show_panel').innerHTML;
 			var loggingData = {
 				'title': loggingDataTitle,
 				'markdownContent': mdContent,
 				'htmlContent': hContent
 			}
 
+			// var param = {};
 			Logging.query(loggingData, function(data) {
 				if (data.success) {
 					alert('success');
@@ -66,6 +70,20 @@ angular.module('myApp.controllers', [])
 	});
 
   }])
-  .controller('homeCtrl', [function() {
+  .controller('homeCtrl', ['$rootScope', '$scope', 'Home', function($rootScope, $scope, Home) {
+  	$scope.articleList = '';
 
+  	$scope.getArticleListFn = function() {
+  		Home.query({}, function(data) {
+  			if (data.content.length) {
+  				$scope.articleList = data.content;
+  				// alert('success');
+  			} else {
+  				// alert('error');
+  			}
+  		});
+  	}
+  	$scope.$watch('$viewContentLoaded', function() {
+  		$scope.getArticleListFn();
+  	});
   }]);
