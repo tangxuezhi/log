@@ -3,9 +3,11 @@
 /* Controllers */
 
 angular.module('myApp.controllers', [])
-	.controller('mainCtrl', ['$rootScope', '$scope', '$http', 'Home', '$location', 'DataTransfer',
-		function($rootScope, $scope, $http, Home, $location, DataTransfer) {
-			$scope.homeButtonClick = function() {}
+	.controller('mainCtrl', ['$rootScope', '$scope', '$http', 'Home', '$location',
+		function($rootScope, $scope, $http, Home, $location) {
+			$scope.homeButtonClick = function() {
+				// console.log('home button click');
+			}
 		}
 	])
 	.controller('articleCtrl', ['$scope', '$routeParams',
@@ -93,5 +95,10 @@ angular.module('myApp.controllers', [])
 			$scope.$watch('$viewContentLoaded', function() {
 				$scope.getArticleListFn();
 			});
+
+			// $scope.$on('homeDataTransfer', function(data) {
+			// 	console.log('--- home data transfer');
+			// 	console.log(data);
+			// });
 		}
 	]);
