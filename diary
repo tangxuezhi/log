@@ -1,5 +1,13 @@
-2014-03-07
+##2014-07-03
 ---    
 1. Create base archtecture with angularjs, contain home, article, logging three part.
 2. Involve marked.js, used for logging feature.
 3. Add basic style for whole project and logging page.
+
+
+##2014-07-06
+---
+1. Complete the basic funcionality:
+  - User can add article.
+  - When browser to home page, the article list refresh in real time.
+  - When click on one article title, browser to article detail page.
