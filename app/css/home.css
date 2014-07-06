@@ -8,13 +8,15 @@
 	bottom: 0;
 	right: 0;
 	background-color: #abcdef;
-	padding: 20px;
+	/*padding: 20px;*/
+	padding: 1.25em;
 }
 /*main content style, end*/
 
 /*article list style, start*/
 #article_list li{
-	margin: 15px 0;
+	/*margin: 15px 0;*/
+	margin: 0.938em 0;
 }
 #article_list li:before{
 	content: '- ';

@@ -57,6 +57,7 @@ angular.module('myApp.controllers', [])
 					var regExp = /^\[.*\]/;
 					loggingDataTitle = (regExp.exec(mdContent))[0].replace(/[\[]/, '');
 					loggingDataTitle = loggingDataTitle.replace(/[\]]/, '');
+					loggingDataTitle = loggingDataTitle.replace(/\s/g, '-');
 
 					var loggingData = {
 						'title': loggingDataTitle,
