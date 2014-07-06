@@ -1,5 +1,5 @@
 <section id="home">
 	<ul id="article_list">
-		<li ng-repeat="article in articleList" ng-class="{{'article-' + $index}}"><a href="">{{article}}</a></li>
+		<li ng-repeat="article in articleList" ng-class="{{'article-' + $index}}"><a ng-href="{{'#/articles/' + article.slice(0, article.indexOf('.html'))}}">{{article}}</a></li>
 	</ul>
 </section>

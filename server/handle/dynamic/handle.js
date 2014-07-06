@@ -9,7 +9,7 @@ function undefined(response, data) {
 };
 
 function home(response, data) {
-	var path = './data';
+	var path = './app/articles/';
 	var returnData = {
 		"success": false,
 		"content": []
@@ -38,7 +38,7 @@ function logging(response, data) {
 		if (err) {
 			throw err;
 		} else {
-			fs.writeFile('./data/' + data.title + '.html', data.htmlContent, function(err, content) {
+			fs.writeFile('./app/articles/' + data.title + '.html', data.htmlContent, function(err, content) {
 				if (err) {
 					throw err;
 				} else {
